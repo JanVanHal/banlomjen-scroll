@@ -19,7 +19,7 @@ A **complete refresh** of Jan's homestay website as a modern, story-telling **sc
 4. **Rooms**: Superior room cards with photos (`room-*`), facilities and the price from the source.
 5. **Cooking with Son**: a full-bleed photo section plus text (`cooking-with-son-*`).
 6. **Trips**: motorbike, bicycle, trekking and car trips, as cards that reveal as you scroll. Each card has its route title from the source, a photo (`motorbike-*`, `bicycle-*`, `trekking-*`, `car-*`, `trips-*`) and a "Personalized trip" option. Packages go here too (`packages-*`).
-7. **Around Chiang Rai**: a horizontal-scroll or masonry gallery (`around-chiang-rai-*`), with short captions for the places named in the source (Wat Rong Khun, Doi Inthanon is NOT local, so use only the source names: Karen Elephant Village, Hanging Bridge, Ban Pha Soet hot springs, Big Buddha, Ban Boon Rawd, Khun Kon waterfall, Chiang Rai city, Chiang Rai Beach, Mae Yao, Huai Mae Sai, and so on).
+7. **Around Chiang Rai**: a horizontal-scroll or masonry gallery (`around-chiang-rai-*`), with short captions for the places named in the source (use only the place names that appear in the source: Wat Rong Khun, Karen Elephant Village, Hanging Bridge, Ban Pha Soet hot springs, Big Buddha, Ban Boon Rawd, Khun Kon waterfall, Chiang Rai city, Chiang Rai Beach, Mae Yao, Huai Mae Sai, and so on).
 8. **By our guests**: a photo wall (`by-guests-*`, the best 12–16, lazy-loaded) with a lightbox.
 9. **Find us / Contact**: a map embed or link, the address, big tap-to-call and LINE buttons, email, Facebook and a simple contact form (a `mailto:` fallback, since there's no backend).
 10. **Footer**: contact details, © Ban Lom Jen Homestay and a small "Website by Jan" line.
