@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://janvanhal.github.io/banlomjen-scroll/sitemap.xml

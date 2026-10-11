@@ -57,3 +57,32 @@ A **complete refresh** of Jan's homestay website as a modern, story-telling **sc
 
 ## Fix list
 _(empty)_
+
+## Scrollcraft plan
+
+Appended by the build. The sections and facts above stay the source of truth.
+
+Grammar: homestay chapters. A place told as chapters you can jump, each on its own ground, with the photographic opening this brief requires. Filmic one-shot lost because the brief asks for a section nav and two hero actions. Continuous world lost because there is no footage and the brief forbids scroll-jacking. Chaptered editorial lost its title-page ban because the brief requires a full-bleed photograph first.
+
+Feeling curve, written before the acts:
+
+1. Calm. The house already in the rice, name and promise on screen.
+2. Recognition. Sawasdee, in the family’s words, with the terrace table.
+3. Stillness. The buildings pass beside you.
+4. Confidence. The room, the bath, the tray, and an honest gap where the nightly rate is not published.
+5. Appetite. The kitchen holds. This is the peak.
+6. Wander. The routes arrive as changes of place.
+7. Expanse. Chiang Rai travels sideways, labelled only where the photograph can carry the name.
+8. Belonging. One real guest note, then their photographs.
+9. Resolve. The address, the call, the form. The page stops here.
+
+Peak, as a visitor would say it: the kitchen opens and you are standing at the stove with Son, and the garden has already decided dinner.
+
+Tell-someone sentence: it’s the site where you walk from the rice field to Son’s kitchen, then light the lantern and the whole house turns to evening.
+
+Signature move: the morning/evening lantern. One control regrades the ground, the type, the scrims, and the photographs together, and the choice is written into the email the form opens. It is not a kit parameter.
+
+Silence before the peak: the rooms are facts, not a second spectacle. No authored empty viewport.
+
+Device order: parallax, reveal, pan, flow, pin, reveal, pan, flow, reveal. The cooking pin is the longest span (4.2). No scrub, because the photographs are real stills and there is no footage to scrub. Registry was empty, so the fingerprint gate had nothing to clear.
+
