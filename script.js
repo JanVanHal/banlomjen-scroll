@@ -199,7 +199,10 @@
     if (!buttons.length) return;
     index = (i + buttons.length) % buttons.length;
     var img = buttons[index].querySelector("img");
-    shot.src = img.currentSrc || img.src;
+    var pic = img.closest("picture");
+    var source = pic ? pic.querySelector("source[srcset]") : null;
+    var fromSource = source ? source.getAttribute("srcset").trim().split(/\s+/)[0] : "";
+    shot.src = img.currentSrc || fromSource || img.src;
     shot.alt = img.alt;
     cap.textContent = img.alt;
   }
@@ -224,6 +227,60 @@
       if (opener) opener.focus();
     });
   }
+
+  // Lazy images inside a transformed rail, or inside CSS columns, often never
+  // intersect the viewport, so the browser never fetches them. Warm a section
+  // as it approaches, and warm a section the moment someone jumps to it.
+  function warmImg(img) {
+    if (!img || img.dataset.warmed === "1") return;
+    img.dataset.warmed = "1";
+    img.decoding = "async";
+    if (img.getAttribute("loading") === "lazy") img.loading = "eager";
+    var pic = img.parentElement;
+    var source = pic && pic.tagName === "PICTURE" ? pic.querySelector("source[srcset]") : null;
+    var early = source ? source.getAttribute("srcset").trim().split(/\s+/)[0] : (img.getAttribute("src") || "");
+    if (!early) return;
+    var pre = new Image();
+    pre.decoding = "async";
+    pre.src = early;
+  }
+
+  function warmRoot(root) {
+    if (!root) return;
+    Array.prototype.forEach.call(root.querySelectorAll("img"), warmImg);
+  }
+
+  if ("IntersectionObserver" in window) {
+    var near = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        warmImg(entry.target);
+        near.unobserve(entry.target);
+      });
+    }, { rootMargin: "0px 60% 80% 60%" });
+    Array.prototype.forEach.call(document.querySelectorAll('img[loading="lazy"]'), function (img) {
+      near.observe(img);
+    });
+
+    var packs = document.querySelectorAll("[data-sc-act='pan'], #cooking, #guests, #rooms, #trips, #welcome");
+    var packObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        warmRoot(entry.target);
+        packObs.unobserve(entry.target);
+      });
+    }, { rootMargin: "0px 0px 140% 0px" });
+    Array.prototype.forEach.call(packs, function (el) { packObs.observe(el); });
+  } else {
+    Array.prototype.forEach.call(document.querySelectorAll("img"), warmImg);
+  }
+
+  document.addEventListener("click", function (event) {
+    var a = event.target.closest && event.target.closest("a[href^='#']");
+    if (!a) return;
+    var id = a.getAttribute("href").slice(1);
+    if (id) warmRoot(document.getElementById(id));
+  });
 
   if (window.ScrollCraft) ScrollCraft.mount(document.body);
 })();
