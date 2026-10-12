@@ -6,7 +6,7 @@ A one-page scrolling site for [Ban Lom Jen Homestay](https://janvanhal.github.io
 
 1. **Hero.** The guest house in the rice field, with a slow zoom and a little parallax. `property-08` is the photograph. `hero-homestay.jpg` on the old site is a collage, so it is not used as a full-bleed frame.
 2. **Sawasdee.** Family introduction and the terrace view (`the-homestay-01`).
-3. **The homestay.** A sideways pass along the house, terrace, restaurant, and garden.
+3. **The homestay.** A sideways pass along the house, terrace, guest tables, and garden.
 4. **Rooms.** The four superior rooms, facilities from the original site, and a note that no nightly rate was published there.
 5. **Cooking with Son.** The long hold on the page. The kitchen photograph stays while the class is told in three beats.
 6. **Trips.** Motorbike, bicycle, trekking, and car, then the four packages with the original prices.
@@ -15,7 +15,7 @@ A one-page scrolling site for [Ban Lom Jen Homestay](https://janvanhal.github.io
 9. **Find us.** Address, call, LINE, map, email, Facebook, and a contact form that opens the visitor’s email app.
 10. **Footer.** Inside the contact section: address, © Ban Lom Jen Homestay, Website by Jan.
 
-A morning / evening lantern in the header regrades the whole page. EN / TH / NL switches the short headings and buttons. Longer copy stays in English.
+A morning / evening lantern in the header regrades the whole page. EN / TH / NL switches the visible copy. The guest quotation stays in the guest's words.
 
 Type is Inter and Source Serif 4, self-hosted as Latin WOFF2 in `fonts/` (SIL Open Font License). Thai characters use the phone or computer's own Thai face.
 
