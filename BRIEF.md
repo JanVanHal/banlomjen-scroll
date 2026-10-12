@@ -86,3 +86,6 @@ Silence before the peak: the rooms are facts, not a second spectacle. No authore
 
 Device order: parallax, reveal, pan, flow, pin, reveal, pan, flow, reveal. The cooking pin is the longest span (4.2). No scrub, because the photographs are real stills and there is no footage to scrub. Registry was empty, so the fingerprint gate had nothing to clear.
 
+
+- [ ] **Animations/scrolling (from Jan, 2026-10-12):** not all animations and scroll effects run smoothly. Review all scroll/reveal animations for jank or glitches and make them reliable (more details from Jan to follow).
+- [ ] **Images loading (from Jan, 2026-10-12):** some images don't load or load too late. Check all image paths, the lazy-loading and preloading of images above the fold, and make sure every image appears in time (more details to follow).
