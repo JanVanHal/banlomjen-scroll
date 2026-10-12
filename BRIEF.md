@@ -56,7 +56,7 @@ A **complete refresh** of Jan's homestay website as a modern, story-telling **sc
 - Fix requests will be added under "Fix list". When asked to "apply the fix list", do every unchecked item, tick it (`- [x]`) and push.
 
 ## Fix list
-_(empty)_
+- [ ] Guest quote in "By our guests": use the guest's exact words from the source `index.html` (it starts "We just loved this place!"). Shorten only by cutting whole sentences and mark cuts with an ellipsis (...), don't reword (for example keep "bbq" and "restaurant/reception").
 
 ## Scrollcraft plan
 
