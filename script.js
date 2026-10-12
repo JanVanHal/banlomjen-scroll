@@ -1,99 +1,5 @@
 (function () {
-  var dict = {
-    en: {
-      book: "Book via LINE",
-      roomsBtn: "See the rooms",
-      welcome: "Sawasdee",
-      homestay: "The homestay",
-      rooms: "Rooms",
-      cooking: "Cooking with Son",
-      trips: "Trips",
-      around: "Around Chiang Rai",
-      guests: "By our guests",
-      find: "Find us",
-      call: "Call",
-      line: "LINE",
-      map: "Map",
-      morning: "Morning",
-      evening: "Evening",
-      menu: "Menu",
-      close: "Close",
-      prev: "Previous",
-      next: "Next",
-      send: "Send message",
-      sendPackage: "Send package request",
-      name: "Name",
-      email: "Email",
-      message: "Message",
-      package: "Package",
-      arrival: "Arrival date",
-      remarks: "Notes",
-      personalized: "Personalized trip",
-      packages: "Packages"
-    },
-    th: {
-      book: "จองทาง LINE",
-      roomsBtn: "ดูห้องพัก",
-      welcome: "สวัสดี",
-      homestay: "โฮมสเตย์",
-      rooms: "ห้องพัก",
-      cooking: "ทำอาหารกับสอน",
-      trips: "ทริป",
-      around: "รอบเชียงราย",
-      guests: "จากผู้เข้าพัก",
-      find: "ติดต่อเรา",
-      call: "โทร",
-      line: "LINE",
-      map: "แผนที่",
-      morning: "เช้า",
-      evening: "ค่ำ",
-      menu: "เมนู",
-      close: "ปิด",
-      prev: "ก่อนหน้า",
-      next: "ถัดไป",
-      send: "ส่งข้อความ",
-      sendPackage: "ส่งคำขอแพ็กเกจ",
-      name: "ชื่อ",
-      email: "อีเมล",
-      message: "ข้อความ",
-      package: "แพ็กเกจ",
-      arrival: "วันมาถึง",
-      remarks: "หมายเหตุ",
-      personalized: "ทริปส่วนตัว",
-      packages: "แพ็กเกจ"
-    },
-    nl: {
-      book: "Boek via LINE",
-      roomsBtn: "Bekijk de kamers",
-      welcome: "Welkom",
-      homestay: "De homestay",
-      rooms: "Kamers",
-      cooking: "Koken met Son",
-      trips: "Uitjes",
-      around: "Rond Chiang Rai",
-      guests: "Van onze gasten",
-      find: "Vind ons",
-      call: "Bellen",
-      line: "LINE",
-      map: "Kaart",
-      morning: "Ochtend",
-      evening: "Avond",
-      menu: "Menu",
-      close: "Sluiten",
-      prev: "Vorige",
-      next: "Volgende",
-      send: "Verstuur bericht",
-      sendPackage: "Verstuur pakketverzoek",
-      name: "Naam",
-      email: "E-mail",
-      message: "Bericht",
-      package: "Pakket",
-      arrival: "Aankomstdatum",
-      remarks: "Opmerkingen",
-      personalized: "Trip op maat",
-      packages: "Pakketten"
-    }
-  };
+  var dict = window.BLJH_I18N || { en: {}, th: {}, nl: {} };
 
   var lang = "en";
   var light = "morning";
@@ -104,17 +10,48 @@
   if (!dict[lang]) lang = "en";
   if (light !== "evening") light = "morning";
 
+  function applyKeyed(selector, attr, write) {
+    var table = dict[lang];
+    document.querySelectorAll(selector).forEach(function (el) {
+      var key = el.getAttribute(attr);
+      if (!table[key]) return;
+      write(el, table[key]);
+    });
+  }
+
   function applyLang() {
     var table = dict[lang];
-    document.querySelectorAll("[data-i18n]").forEach(function (el) {
-      var key = el.getAttribute("data-i18n");
-      if (!table[key]) return;
-      el.textContent = table[key];
+    applyKeyed("[data-i18n]", "data-i18n", function (el, value) {
+      el.textContent = value;
       el.lang = lang;
     });
+    applyKeyed("[data-i18n-html]", "data-i18n-html", function (el, value) {
+      el.innerHTML = value;
+      el.lang = lang;
+    });
+    applyKeyed("[data-i18n-alt]", "data-i18n-alt", function (el, value) {
+      el.alt = value;
+    });
+    applyKeyed("[data-i18n-aria]", "data-i18n-aria", function (el, value) {
+      el.setAttribute("aria-label", value);
+    });
+    if (table.docTitle) document.title = table.docTitle;
+    document.documentElement.lang = lang === "th" || lang === "nl" ? lang : "en";
     document.querySelectorAll("[data-lang]").forEach(function (btn) {
       btn.setAttribute("aria-pressed", btn.getAttribute("data-lang") === lang ? "true" : "false");
     });
+    var dialog = document.getElementById("lightbox");
+    var shot = document.getElementById("lb-img");
+    var cap = document.getElementById("lb-cap");
+    if (dialog && dialog.open && shot && cap) {
+      var buttons = document.querySelectorAll(".wall button");
+      var open = buttons[Number(shot.getAttribute("data-i"))];
+      var img = open && open.querySelector("img");
+      if (img) {
+        shot.alt = img.alt;
+        cap.textContent = img.alt;
+      }
+    }
   }
 
   function syncLanternLabel() {
@@ -204,6 +141,7 @@
     var fromSource = source ? source.getAttribute("srcset").trim().split(/\s+/)[0] : "";
     shot.src = img.currentSrc || fromSource || img.src;
     shot.alt = img.alt;
+    shot.setAttribute("data-i", String(index));
     cap.textContent = img.alt;
   }
 

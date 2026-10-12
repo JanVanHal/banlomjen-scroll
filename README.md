@@ -36,7 +36,7 @@ All photographs come from the static rebuild of the original Weebly site, `JanVa
 
 ## Update the text or the photos
 
-- Copy lives in `index.html`. Short labels that should follow the language toggle are marked `data-i18n` and translated in `script.js`.
+- Copy lives in `index.html`. Visible text is marked `data-i18n`, `data-i18n-html`, or `data-i18n-alt` and translated in `i18n.js` (English, Thai, and Dutch). The guest quotation stays in the guest's own words.
 - A fact that was not on the original site is marked `<!-- TODO -->`. The nightly room rate is one of these: the old site said to ask.
 - To swap a photograph, export a JPEG and a WebP with the same stem into `images/`, keep the `width` and `height` attributes honest, and write an alt that describes the picture.
 - Prices, routes, and the package disclaimer are copied from the original pages. Change them only when Son confirms a new figure.
