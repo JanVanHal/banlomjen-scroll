@@ -151,7 +151,6 @@
     footAddr: ["Ban Lom Jen Homestay · 227 Moo 4, Ban Rimkok, Mae Yao, Muang Chiang Rai 57100, Thailand", "Ban Lom Jen Homestay · 227 หมู่ 4 บ้านริมกก แม่ยาว อำเภอเมืองเชียงราย จังหวัดเชียงราย 57100 ประเทศไทย", "Ban Lom Jen Homestay · 227 Moo 4, Ban Rimkok, Mae Yao, Muang Chiang Rai 57100, Thailand"],
     footPhone: ["Son +66 85 622 2097 · LINE banlomjen ·", "สอน +66 85 622 2097 · LINE banlomjen ·", "Son +66 85 622 2097 · LINE banlomjen ·"],
     footCopy: ["© Ban Lom Jen Homestay", "© Ban Lom Jen Homestay", "© Ban Lom Jen Homestay"],
-    footBy: ["Website by Jan", "เว็บไซต์โดย Jan", "Website door Jan"],
     altHero: ["The long guest house at Ban Lom Jen, set in a green rice field under a cloudy sky", "เรือนพักยาวของ Ban Lom Jen ตั้งอยู่ในนาข้าวสีเขียว ใต้ท้องฟ้ามีเมฆ", "Het lange gastenhuis van Ban Lom Jen, in een groen rijstveld onder een bewolkte hemel"],
     altRice: ["A low table with two cups and flowers, looking over a rice field to a wooded hill", "โต๊ะเตี้ย มีถ้วยสองใบกับดอกไม้ มองข้ามนาข้าวไปยังเนินที่มีป่า", "Een lage tafel met twee kopjes en bloemen, uitkijkend over een rijstveld naar een beboste heuvel"],
     altVerandah: ["A covered verandah with a bench, opening onto the rice field", "ระเบียงมีหลังคาและม้านั่ง เปิดออกสู่ทุ่งนา", "Een overdekte veranda met een bank, open naar het rijstveld"],
